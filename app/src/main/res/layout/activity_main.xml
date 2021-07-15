@@ -107,6 +107,7 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/activity_main_floatingbutton"
+            android:background="#FF03DAC5"
             android:layout_width="wrap_content"
 
             android:layout_height="wrap_content"
