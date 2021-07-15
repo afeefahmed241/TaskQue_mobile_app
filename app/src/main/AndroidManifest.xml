@@ -10,7 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.taskQue_mobile_app">
-        <!--<activity android:name=".NewTask"></activity>-->
+        <activity android:name=".CreateNotesAndLinks"></activity>
+        <activity
+            android:name=".EditTask"
+            android:theme="@style/Theme.AppCompat.NoActionBar" /> <!-- <activity android:name=".NewTask"></activity> -->
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
@@ -24,11 +27,10 @@
             android:name=".MainActivity"
             android:label="Today&apos;s Tasks"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-
         <activity
             android:name=".NewTask"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <receiver android:name=".AlarmReceiver" />
     </application>

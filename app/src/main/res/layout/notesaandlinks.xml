@@ -10,7 +10,7 @@
 
 
     <RelativeLayout
-        android:id="@+id/layout_1"
+        android:id="@+id/layout_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -29,36 +29,28 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tasktitle_cardview"
+                    android:id="@+id/tasknotesTitle_cardview"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
 
                     android:layout_margin="7dp"
                     android:layout_weight="1"
 
-                    android:text="Task Title"
+                    android:text="Note Title"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tasktime_cardview"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="7dp"
-                    android:layout_weight="1"
-                    android:text="Time"
-                    android:textColor="@color/black"/>
 
             </LinearLayout>
 
 
             <TextView
-                android:id="@+id/taskdescription_cardview"
+                android:id="@+id/tasknoteDescription_cardview"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@id/tasktime_cardview"
                 android:layout_margin="7dp"
-                android:text="Task Description"
+                android:text="Note description"
+                android:textStyle="bold"
                 android:textColor="@color/black"/>
 
 

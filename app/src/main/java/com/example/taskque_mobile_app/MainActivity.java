@@ -1,6 +1,7 @@
 package com.example.taskque_mobile_app;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setFragment(new PedingFragment());
 
 
-        pendingBtn.setOnClickListener(new View.OnClickListener() {
+        pendingBtn.setOnClickListener(new View.OnClickListener() {   //home page fragment
             @Override
             public void onClick(View v) {
                 
@@ -78,20 +79,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //RecyclerView homeRecyclerView=findViewById(R.id.home_recycler_view);
-
-
-
-       /* Task[] taskDetails={
-                new Task("Class","OS class","11.00AM"),
-                new Task("Class","MPAL class","9.00AM"),
-                new Task("Class","SIM class","1.00pM"),
-                new Task("Class","MATH class","2.00pM"),
-                new Task("Class","NET class","10.00AM")
-        };*/
-
-       // TaskAdapter taskAdapter=new TaskAdapter(taskDetails);
-       // homeRecyclerView.setAdapter(taskAdapter);
 
         //showDateTime(dateView);
         Calendar calender=Calendar.getInstance();
@@ -114,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();  //to set the default fragment
         fragmentManager.beginTransaction()
                 .replace(R.id.recyclerview_holder, fragment)
                 .commit();
