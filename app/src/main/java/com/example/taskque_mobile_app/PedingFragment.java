@@ -28,11 +28,14 @@ public class PedingFragment extends Fragment {
 
 
         Task[] taskDetails={
-                new Task("Class","OS class","11.00AM"),
-                new Task("Class","MPAL class","9.00AM"),
-                new Task("Class","SIM class","1.00pM"),
-                new Task("Class","MATH class","2.00pM"),
-                new Task("Class","NET class","10.00AM")
+                new Task("Class","OS class","11.00 AM"),
+                new Task("Class","MPAL class","9.00 AM"),
+                new Task("Class","SIM class","1.00 PM"),
+                new Task("Class","MATH class","2.00 PM"),
+                new Task("Class","OS class","11.00 AM"),
+                new Task("Class","OS class","11.00 AM"),
+                new Task("Class","OS class","11.00 AM"),
+                new Task("Class","NET class","10.00 AM")
         };
 
         TaskAdapter taskAdapter=new TaskAdapter(taskDetails);
