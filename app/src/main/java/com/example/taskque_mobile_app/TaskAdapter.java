@@ -26,7 +26,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     public TaskAdapter(Context context,ArrayList<Timers> list) {
 
         tasks = list;
-       // activity = (ItemClicked) context;
+       activity = (ItemClicked) context;
         c = context;
     }
 
@@ -77,6 +77,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
                 @Override
                 public void onClick(View v) {
                     // when clicked
+                    activity.onItemClicked(tasks.indexOf((Timers)v.getTag()));
                 }
             });
         }

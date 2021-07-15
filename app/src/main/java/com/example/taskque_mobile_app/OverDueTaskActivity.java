@@ -4,15 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.ArrayList;
 
-public class OverDueTaskActivity extends AppCompatActivity {
+public class OverDueTaskActivity extends AppCompatActivity implements TaskAdapter.ItemClicked{
 
     RecyclerView recyclerView;
     RecyclerView.Adapter myAdapter;
     RecyclerView.LayoutManager layoutManager;
+    ArrayList<Timers> overDueList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +22,7 @@ public class OverDueTaskActivity extends AppCompatActivity {
 
         TasksDB db = new TasksDB(this);
         db.open();
-        ArrayList<Timers> overDueList = db.getTodayTimersData();
+        overDueList = db.getTodayTimersData();
 
         db.close();
 
@@ -32,5 +34,12 @@ public class OverDueTaskActivity extends AppCompatActivity {
         myAdapter = new TaskAdapter(OverDueTaskActivity.this,overDueList);
         recyclerView.setAdapter(myAdapter);
         myAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onItemClicked(int index) {
+        Intent editTask= new Intent(getApplicationContext(), EditTask.class);
+        editTask.putExtra("TaskID",overDueList.get(index).getTaskID());
+        startActivity(editTask);
     }
 }

@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder> {
+public class LinkAdapter extends RecyclerView.Adapter<LinkAdapter.LinkViewHolder> {
 
-    private ArrayList<Notes> notes;
+    private ArrayList<Links> Links;
     ItemClicked activity;
 
 
@@ -21,15 +21,15 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     {
         void onItemClicked(int index);
     }
-    public NoteAdapter(Context context,ArrayList<Notes> list) {
-        notes =list;
-       // activity = (ItemClicked) context;
+    public LinkAdapter(Context context, ArrayList<Links> list) {
+        Links =list;
+        // activity = (ItemClicked) context;
 
     }
 
     @Override
     public int getItemCount() {
-        return notes.size();
+        return Links.size();
     }
 
 
@@ -38,17 +38,17 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     @NonNull
 
     @Override
-    public NoteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public LinkAdapter.LinkViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.notesaandlinks,parent,false);
-        return new NoteViewHolder(view);
+        return new LinkAdapter.LinkViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NoteAdapter.NoteViewHolder holder, int position) {
-        holder.itemView.setTag(notes.get(position));
-        holder.notes.setText(notes.get(position).getTitle());
-        holder.notes.setText(notes.get(position).getDescription());
+    public void onBindViewHolder(@NonNull LinkAdapter.LinkViewHolder holder, int position) {
+        holder.itemView.setTag(Links.get(position));
+        holder.Links.setText(Links.get(position).getTitle());
+        holder.Links.setText(Links.get(position).getLink());
 
 
 
@@ -57,15 +57,15 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
 
 
 
-    static class NoteViewHolder extends RecyclerView.ViewHolder{
+    static class LinkViewHolder extends RecyclerView.ViewHolder{
 
 
-        TextView notes,des;
+        TextView Links,des;
 
 
-        public NoteViewHolder(@NonNull View itemView) {
+        public LinkViewHolder(@NonNull View itemView) {
             super(itemView);
-            notes=itemView.findViewById(R.id.tasknotesTitle_cardview);
+            Links=itemView.findViewById(R.id.tasknotesTitle_cardview);
             des=itemView.findViewById(R.id.tasknoteDescription_cardview);
 
             itemView.setOnClickListener(new View.OnClickListener() {

@@ -10,8 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.taskQue_mobile_app">
-        <activity android:name=".OverDueTaskActivity"></activity>
-        <activity android:name=".CreateNotesAndLinks" />
+        <activity android:name=".createLinks"></activity>
+        <activity android:name=".OverDueTaskActivity" />
+        <activity android:name=".CreateNotes" />
         <activity
             android:name=".EditTask"
             android:theme="@style/Theme.AppCompat.NoActionBar" /> <!-- <activity android:name=".NewTask"></activity> -->
