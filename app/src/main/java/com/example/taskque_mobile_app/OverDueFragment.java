@@ -25,11 +25,9 @@ public class OverDueFragment extends Fragment {
 
 
         Task[] taskDetails={
-                new Task("naanaa","no class bruh","11.00AM"),
-                new Task("mananana","MPAL class","9.00AM"),
-                new Task("Class","SIM class","1.00pM"),
-                new Task("Class","MATH class","2.00pM"),
-                new Task("Class","NET class","10.00AM")
+                new Task("naanaa","no class bruh","11.00 AM"),
+
+                new Task("Class","no class again","10.00 AM")
         };
 
         TaskAdapter taskAdapter=new TaskAdapter(taskDetails);

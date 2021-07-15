@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.taskQue_mobile_app">
-        <activity android:name=".NewTask"></activity>
+        <!--<activity android:name=".NewTask"></activity>-->
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
@@ -22,7 +22,13 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="Today&apos;s Tasks" />
+            android:label="Today&apos;s Tasks"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity
+            android:name=".NewTask"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:parentActivityName=".MainActivity"/>
 
         <receiver android:name=".AlarmReceiver" />
     </application>
