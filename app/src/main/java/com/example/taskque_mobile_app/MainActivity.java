@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
+import android.content.Intent;
 
 import android.os.Bundle;
 import android.view.View;
@@ -69,7 +70,10 @@ public class MainActivity extends AppCompatActivity {
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "yemete kudasai", Toast.LENGTH_LONG).show();
+                /*Toast.makeText(MainActivity.this, "yemete kudasai", Toast.LENGTH_LONG).show();*/
+                Intent buttonNewTask= new Intent(getApplicationContext(), NewTask.class);
+                startActivity(buttonNewTask);
+
             }
         });
 
