@@ -7,6 +7,10 @@
 
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <LinearLayout
         android:id="@+id/button_textvie"
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -35,7 +39,8 @@
         </CalendarView> -->
 
 
-        <TextView
+
+           <TextView
             android:id="@+id/textview_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -88,6 +93,7 @@
 
 
         </LinearLayout>
+       </LinearLayout>
 
 
 
@@ -98,23 +104,22 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/recyclerview_holder"
         android:layout_width="match_parent"
-        android:layout_height="480dp"
+        android:layout_height="578dp"
 
 
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="80dp"
         android:layout_marginBottom="3dp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/activity_main_floatingbutton"
-            android:background="#FF03DAC5"
             android:layout_width="wrap_content"
-
             android:layout_height="wrap_content"
 
-
             android:layout_marginEnd="24dp"
+
+
             android:layout_marginBottom="24dp"
+            android:background="#FF03DAC5"
             android:contentDescription="TODO"
             android:elevation="6dp"
             android:src="@drawable/ic_baseline_create_24"
