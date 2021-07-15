@@ -40,7 +40,7 @@ public class TasksDB {
     private final String TIMER_TABLE = "TimersTable";
     private final String REQUEST_TABLE = "RequestTable";
     private final String TODAY_TIMER_TABLE = "Today_timersTable";
-    private final int DATABASE_VERSION = 6;
+    private final int DATABASE_VERSION = 10;
 
     private TasksDBHelper ourHelper;
     private final Context ourContext;
@@ -394,6 +394,22 @@ public class TasksDB {
         return links;
     }
 
+    public int getLatestTaskID()
+    {
+        Cursor c = ourDatabase.rawQuery("SELECT MAX(T_ID) FROM "+TASKS_TABLE,new String[]{});
+
+        int maxTaskID = 0;
+        int iID = c.getColumnIndex("MAX(T_ID)");
+
+        for(c.moveToFirst();!c.isAfterLast();c.moveToNext())
+        {
+            maxTaskID = c.getInt(iID);
+
+        }
+        c.close();
+        return maxTaskID;
+
+    }
     public ArrayList<Timers> getTimersData()
     {
         //ourDatabase.rawQuery();

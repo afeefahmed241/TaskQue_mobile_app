@@ -23,23 +23,23 @@ public class PendingFragment extends Fragment {
         View view;
         view= inflater.inflate(R.layout.fragment_peding, container, false);
 
-        RecyclerView homeRecyclerView=(RecyclerView)view.findViewById(R.id.home_recycler_view);
+        //RecyclerView homeRecyclerView=(RecyclerView)view.findViewById(R.id.home_recycler_view);
 
 
 
-        Task[] taskDetails={
-                new Task("Class","OS class","11.00 AM"),
-                new Task("Class","MPAL class","9.00 AM"),
-                new Task("Class","SIM class","1.00 PM"),
-                new Task("Class","MATH class","2.00 PM"),
-                new Task("Class","OS class","11.00 AM"),
-                new Task("Class","OS class","11.00 AM"),
-                new Task("Class","OS class","11.00 AM"),
-                new Task("Class","NET class","10.00 AM")
-        };
+     //   Task[] taskDetails={
+       //         new Task("Class","OS class","11.00 AM"),
+       //         new Task("Class","MPAL class","9.00 AM"),
+         //       new Task("Class","SIM class","1.00 PM"),
+        //        new Task("Class","MATH class","2.00 PM"),
+         //       new Task("Class","OS class","11.00 AM"),
+        //        new Task("Class","OS class","11.00 AM"),
+        //        new Task("Class","OS class","11.00 AM"),
+        //        new Task("Class","NET class","10.00 AM")
+       // };
 
-        TaskAdapter taskAdapter=new TaskAdapter(taskDetails);
-         homeRecyclerView.setAdapter(taskAdapter);
+       // TaskAdapter taskAdapter=new TaskAdapter(taskDetails);
+      //   homeRecyclerView.setAdapter(taskAdapter);
         return view;
     }
 }

@@ -262,6 +262,7 @@
             android:layout_marginRight="26dp"
             android:background="@drawable/bgbtncreate"
             android:fontFamily="sans-serif"
+            android:onClick="btnSaveData"
             android:text="Save"
             android:textAllCaps="false"
             android:textColor="#FFF"

@@ -1,25 +1,34 @@
 package com.example.taskque_mobile_app;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.app.Application;
 import android.content.Intent;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    RecyclerView recyclerView;
+    RecyclerView.Adapter myAdapter;
+    RecyclerView.LayoutManager layoutManager;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +39,41 @@ public class MainActivity extends AppCompatActivity {
         pendingBtn=findViewById(R.id.pending_button);
         overdueBtn=findViewById(R.id.overdue_button);
 
-        setFragment(new PendingFragment());
+        //setFragment(new PendingFragment());
+
+
+
+        TasksDB db = new TasksDB(this);
+        db.open();
+        ArrayList<Timers> t =  db.getTimersData();
+
+
+        db.close();
+
+        for(int i=0;i<t.size();i++)
+        {
+            ApplicationClass.pendingList.add(t.get(i));
+        }
+        recyclerView = findViewById(R.id.rc_home);
+        recyclerView.setHasFixedSize(true);
+
+        layoutManager = new LinearLayoutManager(MainActivity.this);
+       recyclerView.setLayoutManager(layoutManager);
+        myAdapter = new TaskAdapter(MainActivity.this,ApplicationClass.pendingList);
+        recyclerView.setAdapter(myAdapter);
+        myAdapter.notifyDataSetChanged();
+
+
 
 
         pendingBtn.setOnClickListener(new View.OnClickListener() {   //home page fragment
             @Override
             public void onClick(View v) {
-                
-                replaceFragment(new PendingFragment());
+
+
+
+
+                //replaceFragment(new PendingFragment());
                     
                     
                 
@@ -49,7 +85,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                replaceFragment(new OverDueFragment());
+
+                Intent overDue= new Intent(getApplicationContext(), OverDueTaskActivity.class);
+                startActivity(overDue);
+               // replaceFragment(new OverDueFragment());
 
 
 
@@ -98,6 +137,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+
+        myAdapter.notifyDataSetChanged();
     }
 
     public void setFragment(Fragment fragment) {

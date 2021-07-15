@@ -20,18 +20,18 @@ public class OverDueFragment extends Fragment {
         View view;
         view=inflater.inflate(R.layout.fragment_over_due, container, false);
 
-        RecyclerView homeRecyclerView=(RecyclerView)view.findViewById(R.id.home_recycler_view);
+       // RecyclerView homeRecyclerView=(RecyclerView)view.findViewById(R.id.home_recycler_view);
 
 
 
-        Task[] taskDetails={
-                new Task("naanaa","no class bruh","11.00 AM"),
+      //  Task[] taskDetails={
+          //      new Task("naanaa","no class bruh","11.00 AM"),
 
-                new Task("Class","no class again","10.00 AM")
-        };
+           //     new Task("Class","no class again","10.00 AM")
+       // };
 
-        TaskAdapter taskAdapter=new TaskAdapter(taskDetails);
-        homeRecyclerView.setAdapter(taskAdapter);
+       // TaskAdapter taskAdapter=new TaskAdapter(taskDetails);
+       // homeRecyclerView.setAdapter(taskAdapter);
         return view;
     }
 }
