@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class PedingFragment extends Fragment {
+public class PendingFragment extends Fragment {
 
 
 

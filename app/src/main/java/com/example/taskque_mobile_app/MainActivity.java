@@ -29,14 +29,14 @@ public class MainActivity extends AppCompatActivity {
         pendingBtn=findViewById(R.id.pending_button);
         overdueBtn=findViewById(R.id.overdue_button);
 
-        setFragment(new PedingFragment());
+        setFragment(new PendingFragment());
 
 
         pendingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 
-                replaceFragment(new PedingFragment());
+                replaceFragment(new PendingFragment());
                     
                     
                 
