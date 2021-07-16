@@ -9,13 +9,27 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Task Details"
+            android:textSize="30dp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="50dp">
+
+        </TextView>
 
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardiew_tasktitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             app:cardCornerRadius="12dp">
 
             <EditText
@@ -25,11 +39,11 @@
                 android:background="#95F1C0"
                 android:gravity="center"
                 android:padding="18dp"
-
                 android:text="Task Title boro koira dilam"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed"/>
 
 
         </androidx.cardview.widget.CardView>
@@ -38,7 +52,10 @@
             android:id="@+id/cardiew_taskDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+
             app:cardCornerRadius="12dp">
 
             <EditText
@@ -49,7 +66,8 @@
                 android:padding="18dp"
                 android:text="Task er description dite hbe bishaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaal boro"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-condensed"/>
 
 
         </androidx.cardview.widget.CardView>
@@ -58,7 +76,9 @@
             android:id="@+id/cardiew_tasktimeline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             app:cardCornerRadius="12dp">
 
             <TextView
@@ -69,7 +89,8 @@
                 android:padding="18dp"
                 android:text="Timeline"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-condensed"/>
 
 
         </androidx.cardview.widget.CardView>
@@ -78,7 +99,9 @@
             android:id="@+id/cardiew_tasknotes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             app:cardCornerRadius="12dp">
 
             <TextView
@@ -89,7 +112,8 @@
                 android:padding="18dp"
                 android:text="Notes"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-condensed"/>
 
 
         </androidx.cardview.widget.CardView>
@@ -98,7 +122,9 @@
             android:id="@+id/cardiew_tasklinks"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             app:cardCornerRadius="12dp">
 
             <TextView
@@ -109,7 +135,8 @@
                 android:padding="18dp"
                 android:text="Links"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-condensed"/>
 
 
         </androidx.cardview.widget.CardView>
@@ -129,7 +156,7 @@
                 android:layout_margin="20dp"
                 android:layout_marginLeft="30dp"
                 android:layout_weight="1"
-                android:text="Set"
+                android:text="Cancel"
                 android:textColor="@drawable/button_color_change"
                 android:textSize="17sp" />
 
@@ -141,9 +168,8 @@
                 android:layout_margin="20dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
-                android:text="Cancle"
+                android:text="SET"
                 android:textColor="@drawable/button_color_change"
-
                 android:textSize="17sp" />
 
 
