@@ -23,7 +23,7 @@ public class LinkAdapter extends RecyclerView.Adapter<LinkAdapter.LinkViewHolder
     }
     public LinkAdapter(Context context, ArrayList<Links> list) {
         Links =list;
-        // activity = (ItemClicked) context;
+        activity = (ItemClicked) context;
 
     }
 
@@ -47,8 +47,8 @@ public class LinkAdapter extends RecyclerView.Adapter<LinkAdapter.LinkViewHolder
     @Override
     public void onBindViewHolder(@NonNull LinkAdapter.LinkViewHolder holder, int position) {
         holder.itemView.setTag(Links.get(position));
-        holder.Links.setText(Links.get(position).getTitle());
-        holder.Links.setText(Links.get(position).getLink());
+        holder.Link.setText(Links.get(position).getTitle());
+        holder.des.setText(Links.get(position).getLink());
 
 
 
@@ -57,21 +57,22 @@ public class LinkAdapter extends RecyclerView.Adapter<LinkAdapter.LinkViewHolder
 
 
 
-    static class LinkViewHolder extends RecyclerView.ViewHolder{
+    public class LinkViewHolder extends RecyclerView.ViewHolder{
 
 
-        TextView Links,des;
+        TextView Link,des;
 
 
         public LinkViewHolder(@NonNull View itemView) {
             super(itemView);
-            Links=itemView.findViewById(R.id.tasknotesTitle_cardview);
+            Link=itemView.findViewById(R.id.tasknotesTitle_cardview);
             des=itemView.findViewById(R.id.tasknoteDescription_cardview);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     //when clicked
+                    activity.onItemClicked(Links.indexOf((Links) v.getTag()));
                 }
             });
         }

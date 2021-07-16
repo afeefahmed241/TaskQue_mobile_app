@@ -23,7 +23,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     }
     public NoteAdapter(Context context,ArrayList<Notes> list) {
         notes =list;
-       // activity = (ItemClicked) context;
+       activity = (ItemClicked) context;
 
     }
 
@@ -47,8 +47,8 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     @Override
     public void onBindViewHolder(@NonNull NoteAdapter.NoteViewHolder holder, int position) {
         holder.itemView.setTag(notes.get(position));
-        holder.notes.setText(notes.get(position).getTitle());
-        holder.notes.setText(notes.get(position).getDescription());
+        holder.note.setText(notes.get(position).getTitle());
+        holder.des.setText(notes.get(position).getDescription());
 
 
 
@@ -57,21 +57,22 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
 
 
 
-    static class NoteViewHolder extends RecyclerView.ViewHolder{
+    public class NoteViewHolder extends RecyclerView.ViewHolder{
 
 
-        TextView notes,des;
+        TextView note,des;
 
 
         public NoteViewHolder(@NonNull View itemView) {
             super(itemView);
-            notes=itemView.findViewById(R.id.tasknotesTitle_cardview);
+            note=itemView.findViewById(R.id.tasknotesTitle_cardview);
             des=itemView.findViewById(R.id.tasknoteDescription_cardview);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     //when clicked
+                    activity.onItemClicked(notes.indexOf((Notes) v.getTag()));
                 }
             });
         }
