@@ -32,35 +32,39 @@ public class NewTask extends AppCompatActivity {
             }
         });
 
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = etTitle.getText().toString().trim();
+                String des = etDes.getText().toString().trim();
+
+                TasksDB db = new TasksDB(NewTask.this);
+                db.open();
+                db.entryTasks(title,des);
+                // db.close();
+                // db.open();
+                int tID = db.getLatestTaskID();
+                //  db.close();
+                //  db.open();
+                db.entryTimers(tID,2021,6,15,20,50,"One Time");
+                //  db.close();
+                //   db.open();
+                db.entryTodayTimers(tID,2021,6,15,20,50,"One Time");
+                ArrayList<Timers> t =  db.getTimersData();
+
+                db.close();
+
+
+
+                Toast.makeText(NewTask.this, "Saved", Toast.LENGTH_SHORT).show();
+
+                finish();
+            }
+        });
+
 
     }
 
-    public void btnSaveData(View v)
-    {
-        String title = etTitle.getText().toString().trim();
-        String des = etDes.getText().toString().trim();
 
-        TasksDB db = new TasksDB(NewTask.this);
-        db.open();
-        db.entryTasks(title,des);
-       // db.close();
-       // db.open();
-        int tID = db.getLatestTaskID();
-      //  db.close();
-      //  db.open();
-        db.entryTimers(tID,2021,6,15,20,50,"One Time");
-      //  db.close();
-     //   db.open();
-        db.entryTodayTimers(tID,2021,6,15,20,50,"One Time");
-        ArrayList<Timers> t =  db.getTimersData();
-
-        db.close();
-
-
-
-        Toast.makeText(NewTask.this, "Saved", Toast.LENGTH_SHORT).show();
-
-        finish();
-    }
 
 }
