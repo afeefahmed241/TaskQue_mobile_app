@@ -144,6 +144,15 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
     protected void onPostResume() {
         super.onPostResume();
 
+        TasksDB db = new TasksDB(this);
+        db.open();
+        ArrayList<Timers>t = db.getTimersData();
+        db.close();
+        ApplicationClass.pendingList.clear();
+        for(int i=0;i<t.size();i++)
+        {
+            ApplicationClass.pendingList.add(t.get(i));
+        }
         myAdapter.notifyDataSetChanged();
     }
 
