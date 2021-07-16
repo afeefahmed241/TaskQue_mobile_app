@@ -42,4 +42,20 @@ public class OverDueTaskActivity extends AppCompatActivity implements TaskAdapte
         editTask.putExtra("TaskID",overDueList.get(index).getTaskID());
         startActivity(editTask);
     }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+
+        TasksDB db = new TasksDB(this);
+        db.open();
+        ArrayList<Timers>t = db.getTodayTimersData();
+        db.close();
+        overDueList.clear();
+        for(int i=0;i<t.size();i++)
+        {
+            overDueList.add(t.get(i));
+        }
+        myAdapter.notifyDataSetChanged();
+    }
 }

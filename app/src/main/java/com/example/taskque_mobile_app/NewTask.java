@@ -56,11 +56,7 @@ public class NewTask extends AppCompatActivity {
 
         db.close();
 
-        ApplicationClass.pendingList.clear();
-        for(int i=0;i<t.size();i++)
-        {
-            ApplicationClass.pendingList.add(t.get(i));
-        }
+
 
         Toast.makeText(NewTask.this, "Saved", Toast.LENGTH_SHORT).show();
 
