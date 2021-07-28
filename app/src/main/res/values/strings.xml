@@ -2,4 +2,11 @@
     <string name="app_name">TaskQue_mobile_app</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="names">
+
+        <item>Daily</item>
+        <item>One Time</item>
+        <item>Weekly</item>
+
+    </string-array>
 </resources>
