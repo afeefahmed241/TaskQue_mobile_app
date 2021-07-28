@@ -410,6 +410,25 @@ public class TasksDB {
         return maxTaskID;
 
     }
+
+    public int getLatestTimerID()
+    {
+        Cursor c = ourDatabase.rawQuery("SELECT MAX(TIMER_ID) FROM "+TIMER_TABLE,new String[]{});
+
+        int maxTimerID = 0;
+        int iID = c.getColumnIndex("MAX(TIMER_ID)");
+
+        for(c.moveToFirst();!c.isAfterLast();c.moveToNext())
+        {
+            maxTimerID = c.getInt(iID);
+
+        }
+        c.close();
+        return maxTimerID;
+
+    }
+
+
     public ArrayList<Timers> getTimersData()
     {
         //ourDatabase.rawQuery();
