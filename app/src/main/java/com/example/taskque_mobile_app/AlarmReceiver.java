@@ -9,6 +9,8 @@ import android.content.Intent;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import java.util.Calendar;
+
 public class AlarmReceiver extends BroadcastReceiver {
 
     @Override
@@ -47,6 +49,53 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         db.deleteTimersEntry(timerId + "");
         db.entryTodayTimers(timers.getTaskID(), timers.getYear(), timers.getMonth(), timers.getDayOFMonth(), timers.getHourOFDay(), timers.getMinute(), timers.getType());
+        if(timers.getType().equals("Daily"))
+        {
+            Calendar time = Calendar.getInstance();
+            time.set(Calendar.YEAR,timers.getYear());
+            time.set(Calendar.MONTH,timers.getMonth());
+            time.set(Calendar.DAY_OF_MONTH,timers.getDayOFMonth());
+            time.set(Calendar.HOUR_OF_DAY,timers.getHourOFDay());
+            time.set(Calendar.MINUTE,timers.getMinute());
+            time.set(Calendar.SECOND,0);
+            long alarmTime = time.getTimeInMillis();
+            alarmTime = alarmTime + 24*3600*1000;
+
+            time.setTimeInMillis(alarmTime);
+
+            timers.setYear(time.get(Calendar.YEAR));
+            timers.setMonth(time.get(Calendar.MONTH));
+            timers.setDayOFMonth(time.get(Calendar.DAY_OF_MONTH));
+            timers.setHourOFDay(time.get(Calendar.HOUR_OF_DAY));
+            timers.setMinute(time.get(Calendar.MINUTE));
+
+            db.entryTimers(timers.getTaskID(), timers.getYear(), timers.getMonth(), timers.getDayOFMonth(), timers.getHourOFDay(), timers.getMinute(), timers.getType());
+
+
+        }
+        else if(timers.getType().equals("Weekly"))
+        {
+            Calendar time = Calendar.getInstance();
+            time.set(Calendar.YEAR,timers.getYear());
+            time.set(Calendar.MONTH,timers.getMonth());
+            time.set(Calendar.DAY_OF_MONTH,timers.getDayOFMonth());
+            time.set(Calendar.HOUR_OF_DAY,timers.getHourOFDay());
+            time.set(Calendar.MINUTE,timers.getMinute());
+            time.set(Calendar.SECOND,0);
+            long alarmTime = time.getTimeInMillis();
+            alarmTime = alarmTime + 7*24*3600*1000;
+
+            time.setTimeInMillis(alarmTime);
+
+            timers.setYear(time.get(Calendar.YEAR));
+            timers.setMonth(time.get(Calendar.MONTH));
+            timers.setDayOFMonth(time.get(Calendar.DAY_OF_MONTH));
+            timers.setHourOFDay(time.get(Calendar.HOUR_OF_DAY));
+            timers.setMinute(time.get(Calendar.MINUTE));
+
+            db.entryTimers(timers.getTaskID(), timers.getYear(), timers.getMonth(), timers.getDayOFMonth(), timers.getHourOFDay(), timers.getMinute(), timers.getType());
+
+        }
         db.close();
     }
 }

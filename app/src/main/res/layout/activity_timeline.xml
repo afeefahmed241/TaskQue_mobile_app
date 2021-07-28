@@ -36,8 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/spinner"
         android:layout_gravity="center"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="168dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="88dp"
         android:text="Select Date"
         android:textColor="@color/black"
         android:textSize="24dp"
@@ -52,8 +52,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/spinner"
         android:layout_gravity="center"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="332dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="168dp"
         android:text="Select Time"
         android:textColor="@color/black"
         android:textSize="24dp"
@@ -67,42 +67,36 @@
         style="?android:spinnerStyle"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="220dp"
-        android:text="Date"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="120dp"
         android:onClick="openDatePicker"
-        />
-
-    <Button
-        android:id="@+id/timePickerButton_id"
-        style="?android:spinnerStyle"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="388dp"
-        android:onClick="popTimePicker"
-        android:text="Set time"
+        android:text="Date"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TimePicker
+        android:id="@+id/timePicker1"
+        android:layout_width="336dp"
+        android:layout_height="338dp"
+        android:layout_marginBottom="156dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timePickerText_id"
+        app:layout_constraintVertical_bias="0.972" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="101dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="40dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timePickerButton_id">
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <Button
@@ -112,22 +106,22 @@
             android:layout_height="70dp"
             android:layout_margin="20dp"
             android:layout_marginLeft="30dp"
-            android:textColor="@drawable/button_color_change"
             android:layout_weight="1"
             android:text="Set"
+            android:textColor="@drawable/button_color_change"
 
             android:textSize="17sp" />
 
         <Button
             android:id="@+id/cancelBtn_timeline"
             style="?android:attr/buttonBarButtonStyle"
-            android:textColor="@drawable/button_color_change"
             android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_margin="20dp"
             android:layout_marginRight="30dp"
             android:layout_weight="1"
-            android:text="Cancle"
+            android:text="Cancel"
+            android:textColor="@drawable/button_color_change"
 
 
             android:textSize="17sp" />

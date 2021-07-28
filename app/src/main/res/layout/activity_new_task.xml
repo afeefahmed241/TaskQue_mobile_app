@@ -119,23 +119,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:clickable="true"
                 android:fontFamily="sans-serif-condensed"
                 android:text="Timelines"
                 android:textColor="#000000"
                 android:textSize="24sp"
                 android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/ettimeline"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:background="@drawable/bginputtask"
-                android:clickable="true"
-                android:inputType="text"
-                android:maxLength="25"
-                android:paddingLeft="12dp"
-                android:textColor="@color/design_default_color_primary_dark"
-                android:textColorHint="#B5B5B5" />
 
         </LinearLayout>
 
