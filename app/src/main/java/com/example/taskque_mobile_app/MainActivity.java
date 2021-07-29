@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
         recyclerView.setHasFixedSize(true);
 
         layoutManager = new LinearLayoutManager(MainActivity.this);
-       recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager(layoutManager);
         myAdapter = new TaskAdapter(MainActivity.this,ApplicationClass.pendingList);
         recyclerView.setAdapter(myAdapter);
         myAdapter.notifyDataSetChanged();
