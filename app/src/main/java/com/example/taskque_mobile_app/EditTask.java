@@ -42,7 +42,7 @@ public class EditTask extends AppCompatActivity {
         etTitle.setText(t.getTitle());
         etDes.setText(t.getDescription());
         tvTimeline.setText(timers.getHourOFDay()+":"+timers.getMinute()+"-"+timers.getDayOFMonth()
-                +"/"+(timers.getDayOFMonth()+1)+"/"+timers.getYear()+"-"+timers.getType());
+                +"/"+(timers.getMonth()+1)+"/"+timers.getYear()+"-"+timers.getType());
 
         btnNotes.setOnClickListener(new View.OnClickListener() {
             @Override

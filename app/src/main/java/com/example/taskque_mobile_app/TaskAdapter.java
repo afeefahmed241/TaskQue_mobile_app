@@ -44,7 +44,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         holder.itemView.setTag(tasks.get(position));
 
         String time = tasks.get(position).getHourOFDay()+":"+tasks.get(position).getMinute()+"-"+tasks.get(position).getDayOFMonth()
-                +"/"+(tasks.get(position).getDayOFMonth()+1)+"/"+tasks.get(position).getYear()+"-"+tasks.get(position).getType();
+                +"/"+(tasks.get(position).getMonth()+1)+"/"+tasks.get(position).getYear()+"-"+tasks.get(position).getType();
         holder.taskTime.setText(time);
         TasksDB db = new TasksDB(c);
         db.open();
