@@ -175,6 +175,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
         //call the Edit Task activity
         Intent editTask= new Intent(getApplicationContext(), EditTask.class);
         editTask.putExtra("TaskID",ApplicationClass.pendingList.get(index).getTaskID());
+        editTask.putExtra("TimersID",ApplicationClass.pendingList.get(index).getTimersID());
         startActivity(editTask);
 
     }
