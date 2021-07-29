@@ -40,7 +40,7 @@ public class OverDueTaskActivity extends AppCompatActivity implements TaskAdapte
     public void onItemClicked(int index) {
         Intent editTask= new Intent(getApplicationContext(), EditTask.class);
         editTask.putExtra("TaskID",overDueList.get(index).getTaskID());
-        editTask.putExtra("TimerID",overDueList.get(index).getTimersID());
+        editTask.putExtra("TimersID",overDueList.get(index).getTimersID());
         startActivity(editTask);
     }
 

@@ -509,6 +509,32 @@ public class TasksDB {
         return timers;
     }
 
+    public Timers getATodayTimersData(String timerID)
+    {
+        String[] columns = new String[] {TIMER_ID,TASKS_ID,YEAR,MONTH,DAY_OF_MONTH,HOUR_OF_DAY,MINUTE,TYPE};
+        Cursor c = ourDatabase.query(TODAY_TIMER_TABLE,columns,TIMER_ID+" =?",new String[]{timerID},null,null,null);
+
+        Timers timers = new Timers();
+
+        int iTimerID = c.getColumnIndex(TIMER_ID);
+        int iTaskID = c.getColumnIndex(TASKS_ID);
+        int iYear = c.getColumnIndex(YEAR);
+        int iMonth = c.getColumnIndex(MONTH);
+        int iDay = c.getColumnIndex(DAY_OF_MONTH);
+        int iHour = c.getColumnIndex(HOUR_OF_DAY);
+        int iMin = c.getColumnIndex(MINUTE);
+        int iType = c.getColumnIndex(TYPE);
+
+        for(c.moveToFirst();!c.isAfterLast();c.moveToNext())
+        {
+            timers = new Timers(c.getInt(iTimerID),c.getInt(iTaskID),c.getInt(iYear),c.getInt(iMonth),
+                    c.getInt(iDay),c.getInt(iHour),c.getInt(iMin),c.getString(iType));
+
+        }
+        c.close();
+        return timers;
+    }
+
     public ArrayList<Timers> getTodayTimersData()
     {
         String[] columns = new String[] {TIMER_ID,TASKS_ID,YEAR,MONTH,DAY_OF_MONTH,HOUR_OF_DAY,MINUTE,TYPE};

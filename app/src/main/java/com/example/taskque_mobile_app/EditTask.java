@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class EditTask extends AppCompatActivity {
 
@@ -25,6 +26,7 @@ public class EditTask extends AppCompatActivity {
          TaskID = bundle.getInt("TaskID");
          TimersID = bundle.getInt("TimersID");
 
+       // Toast.makeText(this, TimersID+"", Toast.LENGTH_SHORT).show();
         etTitle = findViewById(R.id.textview_tasktitle);
         etDes = findViewById(R.id.textview_taskDescription);
         btnNotes = findViewById(R.id.textview_tasknotes);
@@ -36,7 +38,7 @@ public class EditTask extends AppCompatActivity {
         TasksDB db = new TasksDB(this);
         db.open();
         Tasks t= db.getTasksData(TaskID+"");
-        Timers timers = db.getATimersData(TimersID+"");
+        Timers timers = db.getATodayTimersData(TimersID+"");
         db.close();
 
         etTitle.setText(t.getTitle());
