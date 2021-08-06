@@ -39,6 +39,10 @@ public class EditTask extends AppCompatActivity {
         db.open();
         Tasks t= db.getTasksData(TaskID+"");
         Timers timers = db.getATodayTimersData(TimersID+"");
+        if(timers.getType()==null)
+        {
+            timers = db.getATimersData(TimersID+"");
+        }
         db.close();
 
         etTitle.setText(t.getTitle());

@@ -151,8 +151,25 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
             int fromPosition = viewHolder.getAdapterPosition();
             int toPosition = target.getAdapterPosition();
 
-            Collections.swap(ApplicationClass.pendingList,fromPosition,toPosition);
-            recyclerView.getAdapter().notifyItemMoved(fromPosition,toPosition);
+            //have to delete the alarm by request code remember
+            //for now it will work
+            //have to update the whole database
+            //so be care full
+
+            int timerID = ApplicationClass.pendingList.get(fromPosition).getTimersID();
+            int taskID = ApplicationClass.pendingList.get(fromPosition).getTaskID();
+            TasksDB db = new TasksDB(MainActivity.this);
+            db.open();
+            db.deleteTimersEntry(timerID+"");
+            db.close();
+            Intent timeline= new Intent(getApplicationContext(), Timeline.class);
+            timeline.putExtra("TaskID",taskID);
+            startActivity(timeline);
+
+
+
+            //Collections.swap(ApplicationClass.pendingList,fromPosition,toPosition);
+            //recyclerView.getAdapter().notifyItemMoved(fromPosition,toPosition);
             return false;
         }
 
